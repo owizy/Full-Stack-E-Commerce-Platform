@@ -1,179 +1,315 @@
 # Full-Stack E-Commerce Platform
 
-Open-source single-store shop built with Next.js and Express. Includes auth, catalog, cart, Stripe checkout, orders, admin analytics, and real-time chat.
+A modern, open-source **single-store e-commerce platform** built with **Next.js, Express, Prisma, and PostgreSQL**. The application provides a complete shopping experience with authentication, product management, cart and checkout, Stripe payments, order tracking, admin analytics, inventory management, and real-time customer support.
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Live Demo](https://img.shields.io/badge/Demo-Live-0070f3)](https://open-source-ecommerce.abdalrahman-aboalkhair.work)
-[![YouTube Walkthrough](https://img.shields.io/badge/Video-Walkthrough-red?logo=youtube)](https://www.youtube.com/watch?v=qJDXcQ_sxSI)
 
-**[Live demo](https://open-source-ecommerce.abdalrahman-aboalkhair.work)** · **[YouTube walkthrough](https://www.youtube.com/watch?v=qJDXcQ_sxSI)** · **[Local setup](#local-setup)** · [Repository](https://github.com/Abdelrahman-Aboalkhair/Full-Stack-E-Commerce-Platform)
 
-![Storefront homepage](assets/screenshots/homepage.png)
 
-## Demo video
 
-[![Watch the full-stack walkthrough on YouTube](https://img.youtube.com/vi/qJDXcQ_sxSI/maxresdefault.jpg)](https://www.youtube.com/watch?v=qJDXcQ_sxSI)
+---
 
-**[▶ Watch on YouTube](https://www.youtube.com/watch?v=qJDXcQ_sxSI)** — local Docker setup, storefront, cart, Stripe checkout, admin dashboard, and chat. Some screens may differ slightly from the current codebase.
+## ✨ Features
 
-## Screenshots
+### 🛍️ Storefront
+
+* Browse products and categories
+* Product detail pages
+* Shopping cart
+* Secure checkout
+* Stripe payment integration
+* Order history
+* Order tracking
+* Responsive shopping experience
+
+### 🔐 Authentication & Authorization
+
+* User registration and sign-in
+* Role-based access control
+* Customer, Admin, and Superadmin roles
+* Protected API routes
+* Session/JWT-based authentication
+
+### 📊 Admin Dashboard
+
+* Dashboard overview
+* Product management
+* Inventory management
+* Product attributes
+* Sales and business analytics
+* Reports
+* Audit logs
+* Order management
+* Admin customer support chat
+
+### 💬 Real-Time Chat
+
+* Customer support messaging
+* Real-time communication with Socket.IO
+* Customer chat interface
+* Admin chat dashboard
+
+### ⚙️ Backend & API
+
+* Express REST API
+* Prisma ORM
+* PostgreSQL database
+* Redis integration
+* Stripe payments
+* Cloudinary integration
+* Swagger API documentation
+* API available at `/api/v1`
+* Swagger documentation available at `/api-docs`
+
+### 🧑‍💻 Developer Experience
+
+* Docker Compose development environment
+* Database migrations
+* Seed data
+* Environment variable templates
+* Demo mode
+* Production deployment support
+* Modular frontend and backend architecture
+
+---
+
+## 📸 Screenshots
 
 ### Storefront
 
-| Home | Product detail |
-| --- | --- |
+| Home                                         | Product Details                                          |
+| -------------------------------------------- | -------------------------------------------------------- |
 | ![Homepage](assets/screenshots/homepage.png) | ![Product detail](assets/screenshots/product_detail.png) |
 
-| Cart | Checkout |
-| --- | --- |
+| Cart                                 | Checkout                                   |
+| ------------------------------------ | ------------------------------------------ |
 | ![Cart](assets/screenshots/cart.png) | ![Payment](assets/screenshots/payment.png) |
 
-| Sign in | Sign up |
-| --- | --- |
+| Sign In                                    | Sign Up                                    |
+| ------------------------------------------ | ------------------------------------------ |
 | ![Sign in](assets/screenshots/sign-in.png) | ![Sign up](assets/screenshots/sign-up.png) |
 
-| Your orders | Track order |
-| --- | --- |
+| Your Orders                                        | Track Order                                                  |
+| -------------------------------------------------- | ------------------------------------------------------------ |
 | ![Your orders](assets/screenshots/your_orders.png) | ![Track your order](assets/screenshots/track_your_order.png) |
 
-| Customer chat |
-| --- |
-| ![User chat](assets/screenshots/user_chat.png) |
+| Customer Chat                                      |
+| -------------------------------------------------- |
+| ![Customer chat](assets/screenshots/user_chat.png) |
 
-### Admin dashboard
+### Admin Dashboard
 
-| Overview | Products |
-| --- | --- |
+| Overview                                                         | Products                                                         |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- |
 | ![Dashboard overview](assets/screenshots/dashboard_overview.png) | ![Products dashboard](assets/screenshots/products_dashboard.png) |
 
-| Analytics | Inventory |
-| --- | --- |
+| Analytics                                                | Inventory                                                |
+| -------------------------------------------------------- | -------------------------------------------------------- |
 | ![Analytics](assets/screenshots/analytics_dashboard.png) | ![Inventory](assets/screenshots/inventory_dashboard.png) |
 
-| Attributes | Reports |
-| --- | --- |
+| Attributes                                                 | Reports                                              |
+| ---------------------------------------------------------- | ---------------------------------------------------- |
 | ![Attributes](assets/screenshots/attributes_dashboard.png) | ![Reports](assets/screenshots/reports_dashboard.png) |
 
-| Logs | Admin chat |
-| --- | --- |
-| ![Logs](assets/screenshots/logs_dashboard.png) | ![Dashboard chat](assets/screenshots/dashboard_chat.png) |
+| Logs                                           | Admin Chat                                           |
+| ---------------------------------------------- | ---------------------------------------------------- |
+| ![Logs](assets/screenshots/logs_dashboard.png) | ![Admin chat](assets/screenshots/dashboard_chat.png) |
 
-## Features
+---
 
-- **Storefront** — catalog, product detail, cart, Stripe checkout, order tracking
-- **Auth** — sign-up, sign-in, roles (user, admin, superadmin)
-- **Admin** — products, inventory, attributes, analytics, reports, audit logs
-- **Real-time chat** — customer support (Socket.IO)
-- **API** — Express + Prisma, PostgreSQL, Redis, Swagger at `/api-docs`
-- **Dev experience** — Docker Compose, seed data, env starter docs
 
-## Deployment status
+## 🏗️ Full-Stack Deployment
 
-### Live demo (interactive, no backend)
+This repository does not provide a permanently hosted production API, PostgreSQL database, or Redis instance.
 
-The storefront is hosted on Vercel with **`NEXT_PUBLIC_DEMO_MODE=true`** — a full in-browser mock (no API/database):
+To run the complete application, you can either:
 
-**https://open-source-ecommerce.abdalrahman-aboalkhair.work**
+* Run the project locally with Docker
+* Run the services directly with Node.js
+* Deploy the frontend and backend yourself
 
-- Browse catalog, **sign in** (quick demo accounts on the sign-in page), use **cart**, **mock checkout**, **orders**, and the **admin dashboard**.
-- Data is simulated and stored in `localStorage` until you clear site data.
-- **Live chat** is disabled on the hosted demo (requires Socket.IO + API). Run locally for chat.
+For a self-hosted deployment, you will need:
 
-**Vercel env for the public demo:** set `NEXT_PUBLIC_DEMO_MODE=true` in the client project settings and redeploy.
+* Next.js frontend
+* Express API
+* PostgreSQL
+* Redis
+* Stripe configuration
+* Environment variables
+* A production-ready hosting provider
 
-Demo accounts (any password works in demo mode):
+### Frontend Environment
 
-| Role | Email |
-|------|--------|
-| Customer | `user@example.com` |
-| Admin | `admin@example.com` |
-| Superadmin | `superadmin@example.com` |
+Configure:
 
-### Full stack (local or self-hosted)
-
-There is no maintained hosted API, Postgres, or Redis for this repo. To run auth, cart, payments, and admin:
-
-- **Run locally** using Docker or Node (below).
-- **To deploy yourself**, provision API + database + Redis and set environment variables. This repo does not include cloud dashboard setup.
-
-### If you deploy yourself
-
-1. **Frontend** (e.g. Vercel): set `NEXT_PUBLIC_API_URL_PROD`, `NEXT_PUBLIC_API_URL_DEV` (if needed), `NEXT_PUBLIC_SOCKET_URL` — see [src/client/.env.example](src/client/.env.example).
-2. **API** (e.g. Render, Railway, Fly): set `DATABASE_URL`, `REDIS_URL`, JWT/session secrets, Stripe, etc. — see [src/server/.env.example](src/server/.env.example).
-3. **CORS / cookies**: set `ALLOWED_ORIGINS` on the server to your frontend URL (comma-separated). Required for production; no default production origin is baked into the code.
-4. **Postgres + Redis**: use managed services; run `npx prisma migrate deploy` from `src/server`.
-
-## What this is
-
-Single-store e-commerce app: Next.js frontend, Express + Prisma backend, PostgreSQL, Redis, Socket.IO chat, Stripe checkout, admin dashboard.
-
-## Project layout
-
+```env
+NEXT_PUBLIC_API_URL_PROD=your_api_url
+NEXT_PUBLIC_API_URL_DEV=your_development_api_url
+NEXT_PUBLIC_SOCKET_URL=your_socket_url
 ```
+
+See:
+
+```text
+src/client/.env.example
+```
+
+### Backend Environment
+
+Configure values such as:
+
+```env
+DATABASE_URL=your_database_url
+REDIS_URL=your_redis_url
+JWT_SECRET=your_jwt_secret
+```
+
+Additional Stripe, OAuth, and application settings are documented in:
+
+```text
+src/server/.env.example
+```
+
+### CORS
+
+Set `ALLOWED_ORIGINS` on the backend to your frontend URL.
+
+Multiple origins can be provided as a comma-separated list.
+
+### Database
+
+For production deployments, use a managed PostgreSQL and Redis provider.
+
+Run Prisma migrations with:
+
+```bash
+npx prisma migrate deploy
+```
+
+---
+
+## 📁 Project Structure
+
+```text
 src/
-  client/     Next.js frontend
-  server/     Express API + Prisma
-  docker-compose.yml
-  .env.example   Docker Postgres credentials (copy to .env)
+├── client/                 # Next.js frontend
+├── server/                 # Express API + Prisma
+├── docker-compose.yml       # Docker development environment
+└── .env.example             # Docker PostgreSQL configuration
 ```
 
-## Local setup
+---
 
-Prerequisites: Node.js 18+, PostgreSQL, Redis (or use Docker).
+# 🛠️ Local Setup
 
-No cloud database (Neon, etc.) is required for local Docker — Postgres and Redis run in Compose.
+## Prerequisites
 
-1. Clone and go to the repo root.
+Make sure you have the following installed:
 
-2. Create environment files (see [src/ENV_STARTER.md](src/ENV_STARTER.md) for a full starter pack):
+* Node.js 18+
+* npm
+* PostgreSQL
+* Redis
+* Docker and Docker Compose — recommended
 
+You can use Docker Compose to run PostgreSQL and Redis locally without installing them separately.
+
+---
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/owizy/full-stack-e-commerce-platform.git
+cd full-stack-e-commerce-platform
 ```
+
+---
+
+## 2. Create Environment Files
+
+From the project root:
+
+```bash
 cp src/.env.example src/.env
 cp src/server/.env.example src/server/.env
 cp src/client/.env.example src/client/.env.local
 ```
 
-3. Edit the env files before the first `docker compose up`:
+Then update the environment variables according to your local configuration.
 
-| File | Purpose |
-|------|---------|
-| `src/.env` | Postgres user, password, and database name for the `db` container |
-| `src/server/.env` | API secrets, `REDIS_URL`, Stripe/OAuth placeholders, etc. |
-| `src/client/.env.local` | `NEXT_PUBLIC_*` URLs pointing at `http://localhost:5000` |
+### Environment Files
 
-Use the same Postgres password in `src/.env` and in `src/server/.env` `DATABASE_URL` (same user and database name). Example `DATABASE_URL` for Docker:
+| File                    | Purpose                                                         |
+| ----------------------- | --------------------------------------------------------------- |
+| `src/.env`              | PostgreSQL credentials for Docker                               |
+| `src/server/.env`       | API, database, Redis, authentication, and payment configuration |
+| `src/client/.env.local` | Frontend API and Socket.IO URLs                                 |
 
-`postgresql://YOUR_USER:YOUR_PASSWORD@localhost:5432/b2c_ecommerce` (host) — inside Compose, `DATABASE_URL` is overridden to use host `db`.
+For Docker development, make sure the PostgreSQL credentials match between `src/.env` and the server's `DATABASE_URL`.
 
-### Option A — Docker (recommended)
+Example:
 
-From `src/`:
-
+```env
+DATABASE_URL=postgresql://YOUR_USER:YOUR_PASSWORD@localhost:5432/b2c_ecommerce
 ```
+
+Inside Docker Compose, the database host is overridden to use the `db` service.
+
+---
+
+# 🐳 Option A — Docker
+
+Docker Compose is the recommended way to run the full development environment.
+
+From the `src` directory:
+
+```bash
+cd src
 docker compose up --build
 ```
 
-In a **second terminal**, after containers are running:
+Once the containers are running, open a second terminal and run:
 
-```
+```bash
 cd src
 docker compose exec server npx prisma migrate deploy
 docker compose exec server npm run seed
 ```
 
-Open http://localhost:3000 (frontend), http://localhost:5000/api/v1 (API), http://localhost:5000/api-docs (Swagger).
+### Application URLs
 
-#### Postgres credentials and the `pgdata` volume (read this)
+| Service  | URL                            |
+| -------- | ------------------------------ |
+| Frontend | http://localhost:3000          |
+| API      | http://localhost:5000/api/v1   |
+| Swagger  | http://localhost:5000/api-docs |
 
-Docker Postgres reads `POSTGRES_USER`, `POSTGRES_PASSWORD`, and `POSTGRES_DB` from `src/.env` **only when the database volume is created for the first time**.
+---
 
-If you already ran Compose before, or you change those values later, the old username/password stay stored in the `pgdata` volume. Prisma will then fail with:
+## ⚠️ PostgreSQL Volume Reset
 
-`P1000: Authentication failed ... the provided database credentials for ... are not valid`
+Docker PostgreSQL reads:
 
-**Fix:** reset the local database volume, then start again and re-run migrate + seed:
-
+```env
+POSTGRES_USER
+POSTGRES_PASSWORD
+POSTGRES_DB
 ```
+
+from `src/.env` when the database volume is created for the first time.
+
+If you change these credentials after the volume already exists, PostgreSQL will continue using the old credentials.
+
+This can result in an error such as:
+
+```text
+P1000: Authentication failed
+```
+
+### Reset the Local Database
+
+If you need to recreate the database with the current credentials:
+
+```bash
 cd src
 docker compose down -v
 docker compose up --build
@@ -181,11 +317,17 @@ docker compose exec server npx prisma migrate deploy
 docker compose exec server npm run seed
 ```
 
-`-v` deletes local Postgres data. Use it whenever you change `src/.env` Postgres credentials or hit `P1000` after a fresh clone with an old volume.
+> **Warning:** `docker compose down -v` deletes the local PostgreSQL data stored in the Docker volume.
 
-### Option B — without Docker
+---
 
-```
+# 💻 Option B — Without Docker
+
+You can also run the frontend and backend directly with Node.js.
+
+### Backend
+
+```bash
 cd src/server
 npm install
 npx prisma migrate dev
@@ -193,47 +335,133 @@ npm run seed
 npm run dev
 ```
 
-In another terminal:
+### Frontend
 
-```
+Open another terminal:
+
+```bash
 cd src/client
 npm install
 npm run dev
 ```
 
-## Test accounts (after seeding)
+The frontend will normally be available at:
 
-After `npm run seed` (or `docker compose exec server npm run seed`). Use only in local development.
+```text
+http://localhost:3000
+```
+
+---
+
+# 👤 Test Accounts
+
+After running the database seed:
+
+```bash
+npm run seed
+```
+
+you can use the following development accounts:
 
 | Role       | Email                    | Password      |
-|------------|--------------------------|---------------|
-| Superadmin | superadmin@example.com | password123   |
-| Admin      | admin@example.com      | password123   |
-| User       | user@example.com       | password123   |
+| ---------- | ------------------------ | ------------- |
+| Superadmin | `superadmin@example.com` | `password123` |
+| Admin      | `admin@example.com`      | `password123` |
+| User       | `user@example.com`       | `password123` |
 
-## Demo mode flags
+> These accounts are intended for local development only.
 
-| Variable | Effect |
-|----------|--------|
-| `NEXT_PUBLIC_DEMO_MODE=true` | Full mock: auth, cart, checkout, orders, admin REST, dashboard GraphQL. See [src/client/.env.example](src/client/.env.example). |
-| `NEXT_PUBLIC_USE_DEMO_CATALOG=true` | Catalog-only static products (legacy); use `DEMO_MODE` for the hosted site instead. |
+---
 
-When the API is unreachable and neither flag is set, the client **falls back** to static catalog data for browse-only pages.
+# 🧪 Demo Mode
 
-## Stack
+The application supports multiple demo and fallback modes.
 
-Backend: Node.js, Express, TypeScript, Prisma, PostgreSQL, Redis, Socket.IO, Stripe, Cloudinary.
+| Environment Variable                | Description                                   |
+| ----------------------------------- | --------------------------------------------- |
+| `NEXT_PUBLIC_DEMO_MODE=true`        | Enables the complete frontend mock experience |
+| `NEXT_PUBLIC_USE_DEMO_CATALOG=true` | Enables the legacy static catalog mode        |
 
-Frontend: Next.js, TypeScript, Tailwind, Redux Toolkit.
+### Demo Mode
 
-## More docs
+With:
 
-- [src/ENV_STARTER.md](src/ENV_STARTER.md) — copy-paste env values for a fresh clone
-- [MAINTENANCE.md](MAINTENANCE.md) — maintenance notes and audit history
-- [CONTRIBUTING.md](CONTRIBUTING.md) — how to contribute
-- [src/server/README.md](src/server/README.md) — server details
-- [src/client/README.md](src/client/README.md) — client details
+```env
+NEXT_PUBLIC_DEMO_MODE=true
+```
 
-## License
+the application provides simulated:
 
-MIT. See LICENSE.
+* Authentication
+* Cart
+* Checkout
+* Orders
+* Admin REST operations
+* Dashboard GraphQL data
+
+Demo data is stored locally in the browser.
+
+### Catalog Fallback
+
+When the API is unavailable and neither demo flag is enabled, the frontend can fall back to static catalog data for browse-only pages.
+
+---
+
+# 🧰 Technology Stack
+
+## Frontend
+
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+* Redux Toolkit
+
+## Backend
+
+* Node.js
+* Express
+* TypeScript
+* Prisma
+* PostgreSQL
+* Redis
+* Socket.IO
+
+## Payments & Services
+
+* Stripe
+* Cloudinary
+
+## Development
+
+* Docker
+* Docker Compose
+* Swagger
+* Prisma Migrations
+* Seed Scripts
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+To contribute:
+
+1. Fork the repository
+2. Create a new branch
+3. Make your changes
+4. Test your changes locally
+5. Commit your changes
+6. Push the branch
+7. Open a Pull Request
+
+Please review the contribution guidelines before submitting a PR.
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+See the [`LICENSE`](LICENSE) file for more information.
